@@ -1,0 +1,47 @@
+// Global styles are set in the Tailwind config using a plugin
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply relative;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+.aa-wrapper {
+  @apply w-full lg:max-w-container  box-content  block  mx-auto;
+}
+
+.aa-customBackgroundGradient {
+  background: rgb(104, 109, 224);
+  background: linear-gradient(
+    90deg,
+    rgba(104, 109, 224, 1) 100%,
+    rgba(72, 52, 212, 1) 100%
+  );
+}
+
+.aa-imageLinearTopToBottomGradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 35%,
+    rgba(0, 212, 255, 0) 100%
+  );
+}
+
+.aa-asterixBlack {
+  p,
+  li {
+    @apply text-black;
+  }
+  p {
+    @apply mb-3;
+  }
+  a {
+    @apply text-primary;
+  }
+}
