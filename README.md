@@ -6,7 +6,7 @@
 
 ## Usage
 
-To Use it , you have to clone this **git@github.com:alpakaAlex/bblanket.git** repository to your Folder.
+To Use it , you have to clone this **git@github.com:alpakaAlex/bblanket.git** repository to your Folder .
 
 ## NPM Commands
 
