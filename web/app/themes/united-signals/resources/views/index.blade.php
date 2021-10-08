@@ -16,7 +16,7 @@
 
         @endwhile
     </div>
-    @include('partials.category')
+
 </div>
 
 {{-- <div class="container aa-asterixBlack mb-5">

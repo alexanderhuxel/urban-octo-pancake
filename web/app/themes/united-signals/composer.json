@@ -21,7 +21,9 @@
       "homepage": "https://github.com/qwp6t"
     }
   ],
-  "keywords": ["wordpress"],
+  "keywords": [
+    "wordpress"
+  ],
   "support": {
     "issues": "https://github.com/roots/sage/issues",
     "forum": "https://discourse.roots.io/"
@@ -32,10 +34,13 @@
     }
   },
   "repositories": [
-    { "type": "vcs", "url": "https://github.com/strarsis/sage-installer" }
+    {
+      "type": "vcs",
+      "url": "https://github.com/strarsis/sage-installer"
+    }
   ],
   "require": {
-    "php": ">=7.1",
+    "php": "^7.3|^8.0",
     "composer/installers": "~1.9",
     "illuminate/support": "5.6.*",
     "roots/sage-lib": "~9.0.9",
@@ -49,7 +54,9 @@
     "filp/whoops": "^2.12"
   },
   "scripts": {
-    "test": ["phpcs"],
+    "test": [
+      "phpcs"
+    ],
     "post-create-project-cmd": [
       "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
     ]

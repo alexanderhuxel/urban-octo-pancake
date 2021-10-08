@@ -6,34 +6,25 @@
   <link rel="icon" type="image/png" sizes="32x32" href="@asset('images/favicons/favicon-32x32.png')">
   <link rel="icon" type="image/png" sizes="16x16" href="@asset('images/favicons/favicon-16x16.png')">
   <link rel="manifest" href="@asset('images/favicons/site.webmanifest')">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="mask-icon" href="@asset('images/favicons/safari-pinned-tab.svg')" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#ff0000">
   <meta name="theme-color" content="#ffffff">
 
   <style>
-    @font-face {
-      font-family: "soleil";
-      src: url("@asset('../resources/assets/fonts/700/l.woff2')") format("woff2"), url("@asset('../resources/assets/fonts/700/d.woff')") format("woff"), url("@asset('../resources/assets/fonts/700/a.otf')") format("opentype");
-      font-display: auto;
-      font-style: normal;
-      font-weight: 700;
-    }
-
-    @font-face {
-      font-family: "soleil";
-      src: url("@asset('../resources/assets/fonts/400/l.woff2')") format("woff2"), url("@asset('../resources/assets/fonts/400/d.woff')") format("woff"), url("@asset('../resources/assets/fonts/400/a.otf')") format("opentype");
-      font-display: auto;
-      font-style: normal;
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "soleil";
-      src: url("@asset('../resources/assets/fonts/300/l.woff2')") format("woff2"), url("@asset('../resources/assets/fonts/300/d.woff')") format("woff"), url("@asset('../resources/assets/fonts/300/a.otf')") format("opentype");
-      font-display: auto;
-      font-style: normal;
-      font-weight: 300;
-    }
+   @font-face {
+        font-family: roadrage;
+        src: url("@asset('../resources/assets/fonts/Road_Rage.otf')");
+      }
+      @font-face {
+        font-family: deathrattle;
+        src: url("@asset('../resources/assets/fonts/deathrattlebb_reg.ttf')");
+      }
   </style>
 
   @php wp_head() @endphp

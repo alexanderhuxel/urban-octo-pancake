@@ -736,7 +736,7 @@ hotMiddlewareScript.subscribe(event => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-
+/* eslint-disable */
 
 wp.customize("blogname", (value) => {
   value.bind((to) => jquery__WEBPACK_IMPORTED_MODULE_0___default()(".brand").text(to));
@@ -1643,7 +1643,7 @@ module.exports = jQuery;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "8ade4440ca90618fc965"; }
+/******/ 		__webpack_require__.h = function() { return "680f662db4f36aa49357"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

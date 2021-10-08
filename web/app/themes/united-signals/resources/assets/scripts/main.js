@@ -1,4 +1,5 @@
 // import external dependencies
+/* eslint-disable */
 import "jquery";
 import barbaInit from "./barba/init";
 

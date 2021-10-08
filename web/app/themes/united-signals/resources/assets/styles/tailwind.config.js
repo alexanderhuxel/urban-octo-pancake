@@ -13,110 +13,120 @@
  * This plugin modifies Tailwind’s base styles using values from the theme.
  * https://tailwindcss.com/docs/adding-base-styles#using-a-plugin
  */
-const globalStyles = ({ addBase, theme }) => {
+
+const globalStyles = ({ addBase, config, theme }) => {
   addBase({
     "p, a, li": {
-      fontSize: theme("fontSize.base[0]"),
-      lineHeight: theme("fontSize.base[1]"),
-      color: theme("colors.secondary.DEFAULT"),
-      fontWeight: theme("fontWeight.light"),
+      fontSize: config("theme.fontSize.base[0]"),
+      lineHeight: config("theme.fontSize.base[1]"),
+      color: config("theme.colors.blue.DEFAULT"),
     },
-    ".text-h1, h2, .text-h2, h3, .text-h3, h4, .text-h4, h5, .text-h5, h6, .text-h6":
+    "h1, .text-h1, h2, .text-h2, h3, .text-h3, h4, .text-h4, h5, .text-h5, .text-h1-mobile":
       {
-        // color: theme('colors.secondary.DEFAULT'),
-        marginBottom: theme("margin.2"),
+        color: config("theme.colors.blue.DEFAULT"),
+        marginBottom: config("theme.margin.5"),
+        hyphens: config("theme.hyphens.auto"),
       },
     "h1, .text-h1": {
-      fontSize: theme("fontSize.h1[0]"),
-      lineHeight: theme("fontSize.h1[1]"),
-      fontWeight: theme("fontWeight.bold"),
+      fontSize: config("theme.fontSize.h1[0]"),
+      lineHeight: config("theme.fontSize.h1[1]"),
+      fontFamily: config("theme.fontFamily.serif"),
     },
     ".text-h1-mobile": {
-      fontSize: theme("fontSize.h1-mobile[0]"),
-      lineHeight: theme("fontSize.h1-mobile[1]"),
-      fontWeight: theme("fontWeight.bold"),
+      fontSize: theme("fontSize.h1mobile[0]"),
+      lineHeight: theme("fontSize.h1mobile[1]"),
+      fontFamily: config("theme.fontFamily.serif"),
+    },
+    ".text-h2-mobile": {
+      fontSize: theme("fontSize.h1mobile[0]"),
+      lineHeight: theme("fontSize.h1mobile[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
     },
     "h2, .text-h2": {
-      fontSize: theme("fontSize.h2[0]"),
-      lineHeight: theme("fontSize.h2[1]"),
-      fontWeight: theme("fontWeight.normal"),
+      fontSize: config("theme.fontSize.h2[0]"),
+      lineHeight: config("theme.fontSize.h2[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
     },
     "h3, .text-h3": {
-      fontSize: theme("fontSize.h3[0]"),
-      lineHeight: theme("fontSize.h3[1]"),
-      fontWeight: theme("fontWeight.bold"),
+      fontSize: config("theme.fontSize.h3[0]"),
+      lineHeight: config("theme.fontSize.h3[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
     },
     "h4, .text-h4": {
-      fontSize: theme("fontSize.h4[0]"),
-      lineHeight: theme("fontSize.h4[1]"),
-      fontWeight: theme("fontWeight.bold"),
+      fontSize: config("theme.fontSize.h4[0]"),
+      lineHeight: config("theme.fontSize.h4[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
     },
     "h5, .text-h5": {
-      fontSize: theme("fontSize.h5[0]"),
-      lineHeight: theme("fontSize.h5[1]"),
-      fontWeight: theme("fontWeight.bold"),
+      fontSize: config("theme.fontSize.h5[0]"),
+      lineHeight: config("theme.fontSize.h5[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
     },
     "h6, .text-h6": {
-      fontSize: theme("fontSize.h6[0]"),
-      lineHeight: theme("fontSize.h6[1]"),
-      fontWeight: theme("fontWeight.bold"),
+      fontSize: config("theme.fontSize.h6[0]"),
+      lineHeight: config("theme.fontSize.h6[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
     },
-    ".intro, .text-intro": {
-      fontSize: theme("fontSize.intro[0]"),
-      lineHeight: theme("fontSize.intro[1]"),
-      fontWeight: theme("fontWeight.light"),
-    },
-    ".body, .text-body": {
-      fontSize: theme("fontSize.base[0]"),
-      lineHeight: theme("fontSize.base[1]"),
-      fontWeight: theme("fontWeight.light"),
-    },
-    ".button, .text-button": {
-      fontSize: theme("fontSize.button[0]"),
-      lineHeight: theme("fontSize.button[1]"),
-      fontWeight: theme("fontWeight.bold"),
-    },
-    ".small-link, .text-small-link": {
-      fontSize: theme("fontSize.small-link[0]"),
-      lineHeight: theme("fontSize.small-link[1]"),
-      textDecoration: theme("textDecoration.underline"),
+    ".item, .text-item": {
+      fontSize: config("theme.fontSize.item[0]"),
+      lineHeight: config("theme.fontSize.item[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
     },
     ".overline, .text-overline": {
-      fontSize: theme("fontSize.overline[0]"),
-      lineHeight: theme("fontSize.overline[1]"),
+      fontSize: config("theme.fontSize.overline[0]"),
+      lineHeight: config("theme.fontSize.overline[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
       textTransform: "uppercase",
-      letterSpacing: theme("letterSpacing.tight"),
-    },
-    ".label, .text-label": {
-      fontSize: theme("fontSize.label[0]"),
-      lineHeight: theme("fontSize.label[1]"),
+      letterSpacing: config("theme.letterSpacing.tight"),
     },
     ".caption, .text-caption": {
-      fontSize: theme("fontSize.caption[0]"),
-      lineHeight: theme("fontSize.caption[1]"),
+      fontSize: config("theme.fontSize.caption[0]"),
+      lineHeight: config("theme.fontSize.caption[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+    },
+    ".huge, .text-huge": {
+      fontSize: config("theme.fontSize.huge[0]"),
+      lineHeight: config("theme.fontSize.huge[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+    },
+    ".button, .text-button, .btn": {
+      fontSize: config("theme.fontSize.base[0]"),
+      lineHeight: config("theme.fontSize.base[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
+    },
+    ".button-small, .text-button-small": {
+      fontSize: config("theme.fontSize.buttonsmall[0]"),
+      lineHeight: config("theme.fontSize.buttonsmall[1]"),
+      fontFamily: config("theme.fontFamily.sans"),
+      fontWeight: config("theme.fontWeight.bold"),
+      textTransform: "uppercase",
     },
     ol: { listStyleType: "decimal" },
     ul: { listStyleType: "disc" },
     "ol, ul": {
-      paddingLeft: theme("padding.2"),
-      marginBottom: theme("margin.2"),
+      paddingLeft: config("theme.padding.2"),
+      marginBottom: config("theme.margin.2"),
     },
     li: {
-      paddingLeft: theme("padding.1"),
-      marginBottom: theme("margin.1"),
+      paddingLeft: config("theme.padding.1"),
+      marginBottom: config("theme.margin.1"),
     },
     figcaption: {
-      color: theme("colors.gray.400"),
+      color: config("theme.colors.blue.500"),
+      fontFamily: config("theme.fontFamily.sans"),
     },
   });
 };
 
-/**
- * Configuration
- */
-
 module.exports = {
-  mode: "jit",
+  mode: "",
   purge: {
     content: [
       // relative path globs to template files
@@ -126,35 +136,60 @@ module.exports = {
       "./resources/**/*.js",
     ],
     safelist: [
-      "bg-primary",
-      "bg-secondary",
+      "text-h1-mobile",
+      "text-h2-mobile",
+      "text-transparent",
+      "text-white",
+      "text-black",
+      "text-warm-gray-1",
+      "text-warm-gray-2",
+      "text-turquoise-300",
+      "text-yellow-300",
+      "text-orange-300",
+      "text-blue-300",
+      "bg-transparent",
       "bg-white",
-      "bg-gray-100",
-      "bg-secondary-500",
-      "md:grid-cols-2",
-      "md:grid-cols-3",
-      "md:grid-cols-4",
-      "md:grid-cols-5",
+      "bg-black",
+      "bg-warm-gray-1",
+      "bg-warm-gray-2",
+      "bg-orange",
+      "bg-turquoise-300",
+      "bg-orange-300",
+      "bg-yellow-300",
+      "bg-green-300",
+      "bg-blue-300",
+      "bg-turquoise-500",
+      "bg-orange-500",
+      "bg-yellow-500",
+      "bg-green-500",
+      "bg-blue-500",
+      "min-h-48",
     ],
-    options: {},
-    purge: {},
+    options: {
+      whitelist: [],
+      // purgecss options (e.g. whitelist: [], etc.)
+    },
   },
   theme: {
     colors: {
-      white: "#fff",
-      black: "#212429",
-      gray: {
-        100: "#F8F9FA",
-        200: "#DDE2E5",
-        300: "#ACB5BD",
-        400: "#ACB5BD",
+      white: {
+        100: "#ffffff",
+        200: "#FCFDFE",
+        300: "#E5E5E5",
       },
-      primary: {
-        DEFAULT: "#4834D4",
+
+      black: {
+        100: "#030305",
+        200: "#111011",
       },
-      secondary: {
-        DEFAULT: "#ffff",
+
+      purple: {
+        100: "#F680FE",
+        200: "#C947Ea",
+        300: "#452759",
       },
+      red: "#F10002",
+
       transparent: "transparent",
     },
     container: {
@@ -162,27 +197,27 @@ module.exports = {
       padding: "1rem",
     },
     fontFamily: {
-      display: "soleil, sans-serif",
+      sans: "century-gothic, sans-serif",
+      serif: 'Libre Baskerville", serif',
+      roadrage: "roadrage",
+      deathrattle: "deathrattle",
+      quicksand: "Quicksand",
     },
     fontSize: {
-      h1: ["3rem", { lineHeight: "3.5rem" }],
-      "h1-mobile": ["2.5rem", { lineHeight: "3rem" }],
-      h2: ["1.9rem", { lineHeight: "2.25rem" }],
-      h3: ["1.5rem", { lineHeight: "1.8rem" }],
-      h4: ["1.25rem", { lineHeight: "1.4rem" }],
-      h5: ["1rem", { lineHeight: "1.125rem" }],
-      h6: ["1rem", { lineHeight: "2rem" }],
-      intro: ["1.375rem", { lineHeight: "2rem" }],
-      base: ["0.9375rem", { lineHeight: "2rem" }],
-      button: ["1rem", { lineHeight: "1.5rem" }],
-      "small-link": ["0.75rem", { lineHeight: "1rem" }],
-      overline: ["0.75rem", { lineHeight: "1rem" }],
-      label: ["0.75rem", { lineHeight: "1rem" }],
-      caption: ["0.625rem", { lineHeight: "1rem" }],
+      h1: ["4rem", { lineHeight: "6.375rem" }],
+      h2: ["2.25rem", { lineHeight: "3.5rem" }],
+      h3: ["2.25rem", { lineHeight: "3.5rem" }],
+      h4: ["1.5rem", { lineHeight: "2.5rem" }],
+      // h5: ['1.125rem', { lineHeight: '1.5rem' }],
+      // h6: ['0.875rem', { lineHeight: '1rem' }],
+      body: ["1rem", { lineHeight: "2rem" }],
+      footer: ["1rem", { lineHeight: "1.5rem" }],
+      button: ["1rem", { lineHeight: "2.25rem" }],
     },
     fontWeight: {
       light: "300",
       normal: "400",
+      semibold: "600",
       bold: "700",
     },
     spacing: {
@@ -215,13 +250,14 @@ module.exports = {
       20: "160px",
       21: "168px",
       24: "192px",
-      25: "200px",
+      26: "230px",
       32: "256px",
       35: "280px",
       36: "288px",
+      37: "304px",
+      38: "313px",
       40: "320px",
       48: "384px",
-      50: "400px",
       56: "448px",
       64: "512px",
       68: "544px",
@@ -231,47 +267,45 @@ module.exports = {
       120: "960px",
       128: "1024px",
       150: "1200px",
-      parallax: "120%",
+      half: "50%",
     },
-    minHeight: {
+    borderWidth: {
+      DEFAULT: "1px",
       0: "0",
-      px: "1px",
-      40: "320px",
-      64: "512px",
-      80: "640px",
-      100: "800px",
-      full: "100%",
-      screen: "100vh",
+      2: "2px",
+      3: "3px",
+      4: "4px",
     },
     borderRadius: {
-      none: "0",
-      small: "4px",
       DEFAULT: "16px",
-      big: "20px",
+      null: "0px",
+      smaller: "2px",
+      button: "4px",
+      small: "8px",
+      searchbar: "28px",
       full: "9999px",
     },
     boxShadow: {
-      DEFAULT: "0 8px 16px rgba(17, 17, 17, 0.04)",
-      large:
-        "0px 27px 47px rgba(0, 0, 0, 0.13),0px 3.38082px 5.88513px rgba(0, 0, 0, 0.065)",
-      inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-      button: "0px 4px 20px rgba(104, 109, 224, 0.5);",
+      button: "4px 8px 32px rgba(201, 71, 228, 0.5)",
+      discord: "4px 8px 32px rgba(88, 101, 242,  0.5)",
+      small: "0px 4px 16px rgba(17, 17, 17, 0.08)",
+      large: "0px 24px 32px rgba(17, 17, 17, 0.08);",
+    },
+    hyphens: {
+      auto: "auto",
       none: "none",
     },
     extend: {
       maxWidth: {
-        container: "1120px",
-        containerhalf: "560px",
-        none: "none",
-        full: "100%",
-        parallax: "120%",
+        container: "1440px",
+        32: "256px",
       },
-      opacity: {
-        24: ".24",
-      },
-      minWidth: {
-        none: "none",
+      minHeight: {
+        0: "0",
+        15: "120px",
+        48: "384px",
         full: "100%",
+        screen: "100vh",
       },
       maxHeight: {
         99999: "99999px",
@@ -279,10 +313,12 @@ module.exports = {
     },
   },
   variants: {
-    extend: {
-      scale: ["active", "group-hover"],
-      opacity: ["active", "group-hover"],
-    },
+    // Define variants
   },
-  plugins: [globalStyles, require("@tailwindcss/forms")],
+  plugins: [
+    globalStyles,
+    // require('@tailwindcss/aspect-ratio'),
+    // require('@tailwindcss/forms'),
+    // require('tailwindcss-hyphens'),
+  ],
 };
