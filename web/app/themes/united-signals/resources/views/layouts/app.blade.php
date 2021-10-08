@@ -6,29 +6,28 @@
         {{-- <div class="barba-animation"></div>
         <div id="barba-wrapper" data-barba="wrapper">
             <div class="barba-container" data-barba="container"> --}}
-          
 
-                    @php do_action('get_header') @endphp
-                    @include('partials.header')
 
-                    <div class="wrap" role="document">
-                        <div class="content">
+        @php do_action('get_header') @endphp
+        @include('partials.header')
 
-                            <main class="main ">
-                                <div id="maincontent">
-                                    @yield('content')
-                                </div>
-                            </main>
 
-                        </div>
-                    </div>
 
-                    @php do_action('get_footer') @endphp
-                    @include('partials.footer')
-                    @php wp_footer() @endphp
 
-                
-            {{-- </div>
+
+        <div id="maincontent">
+            @yield('content')
+        </div>
+
+
+
+
+        @php do_action('get_footer') @endphp
+        @include('partials.footer')
+        @php wp_footer() @endphp
+
+
+        {{-- </div>
         </div> --}}
     </body>
 
