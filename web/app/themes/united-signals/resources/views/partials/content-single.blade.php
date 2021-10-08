@@ -27,18 +27,18 @@
             <div class="departments flex flex-row flex-wrap">
                 <h2 class="h2 text-primary w-full font-bold">Kategorien</h2>
                 @php
-                loadAllCategorys();
+
                 @endphp
 
                 <div class="flex flex-wrap flex-row justify-start">
 
                 </div>
                 <div class="join mt-7">
-                    @include ('partials.categoryPage.antrag')
+
                 </div>
 
                 <div class="sponsors mb-3">
-                    @include('partials.categoryPage.sponsoren')
+
                 </div>
 
             </div>
@@ -46,6 +46,6 @@
 
     </div>
 </article>
-@include ('partials.categoryPage.gallerieCategory')
+
 
 @endsection
