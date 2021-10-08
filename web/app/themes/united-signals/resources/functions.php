@@ -91,17 +91,7 @@ Container::getInstance()
         ]);
     }, true);
 
-    function loadAllCategorys(){
-	$post_categories = wp_get_post_categories( get_the_ID(), array( 'fields' => 'all') );
-	if( $post_categories ){
-	for ($i=0; $i < count($post_categories) ; $i++) { 
-		echo '<a href="'.get_category_link($post_categories[$i]->term_id) .'">';
-		echo '<button class="aa-customButton shadow-button items-center mb-2 flex">';
-		echo $post_categories[$i]->name; 
-		echo '</button></a>';
-	} 
-}
-}
+  
 
 function console_log( $data ){
   echo '<script>';

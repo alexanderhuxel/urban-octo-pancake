@@ -58,37 +58,12 @@ add_action('init', 'create_custom_post');
 */
 
 
-
 add_action('init', function () {
     register_post_type(
-        'jobs', // slug for custom post type
+        'streamer', // slug for custom post type
         array(
             'labels' => array(
-                'name' => __('Jobs'),
-            ),
-            'public' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => false,
-            'show_in_nav_menus' => false,
-            'hierarchical' => false,
-            'has_archive' => false,
-            'supports' => array(
-                'title',
-                'page-attributes',
-                'revisions'
-            ),
-            'show_in_rest' => false,
-            'can_export' => true,
-        )
-    );
-});
-
-add_action('init', function () {
-    register_post_type(
-        'presse', // slug for custom post type
-        array(
-            'labels' => array(
-                'name' => __('Presse'),
+                'name' => __('Streamer'),
             ),
             'public' => true,
             'publicly_queryable' => true,
