@@ -17,6 +17,8 @@
 $blockHasOwnTitle = false;
 
 // vars
+global $post;
+$post->post_id = 6;
 @endphp
 
 @extends('blocklayout.blocklayout')
@@ -54,7 +56,7 @@ $discordState = get_field('discordState');
       <p class="text-body mb-5 font-quicksand text-white-200 w-auto max-w-xs sm:w-56">
         {{ $description }}
       </p>
-      <a href="" class="aa-customButton">
+      <a href="{{ get_permalink($post->post_id)}}" class="aa-customButton">
         {{ $buttonText }}
       </a>
     </div>

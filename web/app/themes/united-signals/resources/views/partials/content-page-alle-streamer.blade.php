@@ -1,4 +1,4 @@
-<h2 class="text-white-200 text-center font-roadrage mb-2.5 text-h2">
+<h2 class="text-white-200 text-center font-roadrage mb-5 text-h2">
     Alle Streamer
 </h2>
 
@@ -45,7 +45,6 @@ $streamer = new WP_Query(array('post_type' => 'Streamer'));
                 @endphp
                 <li class="pl-0 mb-0">
                     <a target="_blank" href="{{ $link }}">
-
                         @switch($link)
                         @case(str_contains($link, 'facebook'))
                         <img class="w-2 h-2 ml-2" src="@asset('images/facebook.svg')" />
@@ -61,12 +60,6 @@ $streamer = new WP_Query(array('post_type' => 'Streamer'));
                 @endwhile
             </ul>
             @endif
-
-
-
-
-
-
             <div class="flex mr-2.5 items-center justify-center">
                 <p class="text-white-200 font-quicksand mr-1.5 font-bold">LIVE</p>
                 <span class="w-4 h-4 animate- rounded-full animate-pulse bg-red"></span>
@@ -76,7 +69,6 @@ $streamer = new WP_Query(array('post_type' => 'Streamer'));
 
     @endwhile
     @endif
-</div>
 
 
 
