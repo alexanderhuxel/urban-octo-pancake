@@ -54,7 +54,7 @@ $discordState = get_field('discordState');
       <p class="text-body mb-5 font-quicksand text-white-200 w-auto max-w-xs sm:w-56">
         {{ $description }}
       </p>
-      <a href="#" class="aa-customButton">
+      <a href="" class="aa-customButton">
         {{ $buttonText }}
       </a>
     </div>
