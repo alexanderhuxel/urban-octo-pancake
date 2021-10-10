@@ -74,7 +74,57 @@ add_action('init', function () {
             'supports' => array(
                 'title',
                 'page-attributes',
-                'revisions'
+                'revisions',
+            ),
+            'show_in_rest' => false,
+            'can_export' => true,
+        )
+    );
+});
+
+
+add_action('init', function () {
+    register_post_type(
+        'tournaments', // slug for custom post type
+        array(
+            'labels' => array(
+                'name' => __('Tournaments'),
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => false,
+            'show_in_nav_menus' => false,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'page-attributes',
+                'revisions',
+            ),
+            'show_in_rest' => false,
+            'can_export' => true,
+        )
+    );
+});
+
+
+add_action('init', function () {
+    register_post_type(
+        'clanwars', // slug for custom post type
+        array(
+            'labels' => array(
+                'name' => __('Clanwars'),
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => false,
+            'show_in_nav_menus' => false,
+            'hierarchical' => false,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'page-attributes',
+                'revisions',
             ),
             'show_in_rest' => false,
             'can_export' => true,
