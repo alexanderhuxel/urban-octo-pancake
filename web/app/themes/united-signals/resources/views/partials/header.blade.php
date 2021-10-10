@@ -10,5 +10,5 @@
         </button>
     </header>
 </div>
-<div class="wrapper w-full   px-2 md:px-5 xl:px-20">
-    <main class="mb-2.5 relative">
+<div class="wrapper    px-2 md:px-5 xl:px-20">
+    <main class="mb-2.5 test relative">

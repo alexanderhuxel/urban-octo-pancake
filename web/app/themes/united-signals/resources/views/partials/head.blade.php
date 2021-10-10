@@ -24,6 +24,10 @@
       font-family: deathrattle;
       src: url("@asset('../resources/assets/fonts/deathrattlebb_reg.ttf')");
     }
+
+    .test {
+      min-height: calc(100vh - 180px);
+    }
   </style>
 
   @php wp_head() @endphp

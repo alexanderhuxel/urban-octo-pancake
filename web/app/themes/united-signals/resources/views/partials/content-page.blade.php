@@ -1,18 +1,18 @@
 @if (get_the_title() == 'datenschutzerklaerung' || 'impressum')
-<div class="mt-10">
-    <style>
-        p,
-        h2,
-        h1,
-        h3,
-        h4,
-        li {
-            color: white !important;
-        }
-    </style>
-    @php
-    the_content();
-    @endphp
+
+<style>
+    p,
+    h2,
+    h1,
+    h3,
+    h4,
+    li {
+        color: white !important;
+    }
+</style>
+@php
+the_content();
+@endphp
 </div>
 @else
 @php
