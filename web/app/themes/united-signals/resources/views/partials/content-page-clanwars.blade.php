@@ -26,7 +26,6 @@ $clanwar = new WP_Query(array('post_type'=>'Clanwars'));
         $size = 'full';
         $imageUrl1 = wp_get_attachment_image_src($teamLogo1,$size);
         $imageUrl2 = wp_get_attachment_image_src($teamLogo2,$size);
-        console_log($imageUrl2);
 
         @endphp
         <div class="flex border-b mt-2 border-white-200 border-opacity-50 border-opa flex-row">
