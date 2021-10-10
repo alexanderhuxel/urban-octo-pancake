@@ -4,7 +4,7 @@
 
 
 <div class="flex flex-col">
-    <div class="flex mt-10 mb-7 transform flex-col items-center md:flex-row">
+    <div class="flex mt-10 mb-7  flex-col items-center md:flex-row">
         @php
         $image = get_field('streamerImage');
         $size = 'full';
@@ -17,7 +17,10 @@
                 {{get_the_title()}}
             </h2>
             <span>
-                <p class="text-white-200 font-quicksand text-body">Alter: 31</p>
+                <p class="text-white-200 font-quicksand text-body">
+                    Alter: {{get_field('streamerAge')}}
+
+                </p>
                 <p class="text-white-200 font-quicksand text-body">
                     Herkunft: {{get_field('streamerOrgin')}}
                 </p>
@@ -54,15 +57,15 @@
             @endphp
 
             @if ($gameSelection == 'Apex Legends')
-            <img src="@asset('images/apex.png')" />
+            <img class="shadow-button" src="@asset('images/apex.png')" />
             @endif
 
             @if ($gameSelection == 'Call of Duty Warzone')
-            <img src="@asset('images/warzone.png')" />
+            <img class="shadow-button" src="@asset('images/warzone.png')" />
             @endif
 
             @if ($gameSelection == 'Naraka Bladepoint')
-            <img src="@asset('images/naraka.png')" />
+            <img class="shadow-button" src="@asset('images/naraka.png')" />
             @endif
 
             @endwhile
@@ -117,7 +120,7 @@
         </h2>
     </div>
     <!-- TWITCH EMBED WITH SCRIPT -->
-    <div class="mb-7" id="twitch-embed">
+    <div class="mb-7 shadow-button" id="twitch-embed">
 
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
