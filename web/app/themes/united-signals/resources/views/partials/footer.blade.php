@@ -1,6 +1,6 @@
 </main>
 </div>
-<div class="wrapper w-full   px-2 md:px-5 xl:px-20">
+<div class="wrapper w-full mb-2.5   px-2 md:px-5 xl:px-20">
   <footer class="flex flex-col items-center lg:items-end w-full h-auto">
     <div class="flex flex-col md:flex-row flex-wrap justify-end">
       <ul class="flex md:mb-0 pl-0 items-center list-none mr-0 md:mr-5">
