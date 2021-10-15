@@ -25,7 +25,7 @@ jobs:
         with:
           server: ftp.alexhuxel.de
           # server-dir // declare de directiory where will be uploaded
-          server-dir: artistgaming.alexhuxel.de/
+          server-dir: ./
           username: f0144254
           password: VNyz85MpiaXgngxOqS5k
           local-dir: ./
