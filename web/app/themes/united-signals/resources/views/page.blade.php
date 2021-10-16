@@ -3,18 +3,15 @@
 @section('content')
 
 @while(have_posts()) @php the_post() @endphp
-{{-- @if (get_the_title() == 'Clanwar Ergebnisse')
+@if (get_the_title() == 'Clanwar Ergebnisse')
 @include('partials.clanwars')
 @else
 @include('partials.content-page')
-@endif  --}}
+@endif
 
 @switch(get_the_title())
 @case('Clanwar Ergebnisse')
 @include('partials.content-page-clanwars')
-@break
-@case('Alle Streamer')
-@include('partials.content-page-alle-streamer')
 @break
 @default
 @include('partials.content-page')
