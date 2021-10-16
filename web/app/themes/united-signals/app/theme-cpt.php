@@ -78,6 +78,7 @@ add_action('init', function () {
             ),
             'show_in_rest' => false,
             'can_export' => true,
+            'rewrite'           => array( 'slug' => 'streamer' )
         )
     );
 });
