@@ -57,7 +57,6 @@ console_log($streamer);
             gap-10">
             @endif
 
-
             @while ($streamer->have_posts())
             @php
             $streamer->the_post();
@@ -67,8 +66,8 @@ console_log($streamer);
             $streamerName = get_field('streamerName', get_the_ID());
             $streamerDescription = get_field('streamerDescription', get_the_ID());
             @endphp
-
-            <div class="flex w-38 bg-black-200 flex-col">
+            <div class="flex w-38 bg-black-200 flex-col relative">
+                <a class="absolute inset-0 border" href="{{ get_permalink() }}"></a>
                 <img src="{!! $imageUrl['0'] !!}">
                 <div class="flex flex-col">
                     <span class="ml-2.5 mt-4 mb-1.5">
@@ -113,7 +112,6 @@ console_log($streamer);
                 </div>
             </div>
 
-
             @endwhile
 
             @endif
@@ -129,5 +127,5 @@ console_log($streamer);
 
     </div>
 
-
-    @overwrite
+</div>
+@overwrite
