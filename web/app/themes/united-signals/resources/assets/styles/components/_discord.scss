@@ -1,0 +1,5 @@
+#iframe {
+  &.active {
+    @apply w-32 h-56;
+  }
+}
