@@ -11,25 +11,32 @@
         $imageUrl = wp_get_attachment_image_src($image,$size);
         @endphp
 
-        <img class="md:mr-4 self-center mb-2 md:mb-0 max-w-md" src="{!! $imageUrl['0'] !!}" />
+        <img class="md:mr-4 self-center mb-2 md:mb-0 max-w-md max-h-37 object-cover" src="{!! $imageUrl['0'] !!}" />
         <div class="flex flex-col self-center md:ml-4 justify-center">
             <h2 class="text-white-200 font-deathrattle mb-2.5 text-h2">
                 {{get_the_title()}}
             </h2>
             <span>
+                @if (get_field('streamerAge'))
                 <p class="text-white-200 font-quicksand text-body">
                     Alter: {{get_field('streamerAge')}}
-
                 </p>
+                @endif
+                @if (get_field('streamerOrgin'))
                 <p class="text-white-200 font-quicksand text-body">
                     Herkunft: {{get_field('streamerOrgin')}}
                 </p>
+                @endif
+                @if (get_field('streamerState'))
                 <p class="text-white-200 font-quicksand text-body">
                     Bundesland: {{get_field('streamerState')}}
                 </p>
+                @endif
+                @if (get_field('streamerConsole'))
                 <p class="text-white-200 mb-2.5 font-quicksand text-body">
                     Platform: {{get_field('streamerConsole')}}
                 </p>
+                @endif
             </span>
             <a class="aa-customButton" href="#twitch-embed">zum Stream</a>
         </div>
@@ -45,7 +52,7 @@
                         gap-5
                         md:grid-cols-3
                         my-7
-                        justify-items-center
+                        self-center
                       ">
 
 
@@ -73,6 +80,7 @@
     </div>
     @endif
 
+    @if (have_rows('streamerDatesSlots'))
     <div class="flex flex-col mb-7">
         <h2 class="text-h2 text-white-200 mb-7 text-center font-deathrattle">
             Stream Zeiten
@@ -86,7 +94,6 @@
                   ">
 
 
-            @if (have_rows('streamerDatesSlots'))
             @while (have_rows('streamerDatesSlots'))
             @php
             the_row();
@@ -108,12 +115,12 @@
                 </p>
             </span>
             @endwhile
-            @endif
 
 
         </div>
     </div>
 
+    @endif
     <div class="flex flex-col">
         <h2 class="text-h2 font-deathrattle text-white-200 mb-7 text-center">
             stream

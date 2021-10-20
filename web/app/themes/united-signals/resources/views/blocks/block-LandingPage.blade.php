@@ -35,12 +35,10 @@ $discordState = get_field('discordState');
   @if ($discordState == 'Anzeigen')
 
   <button><img id="discord" class="w-5 h-5 transition-all ease-in-out duration-300 rounded-full hover:shadow-discord 
-    absolute z-10 right-0 bottom-15" src="@asset('images/discord.svg')"></button>
-  <iframe id="iframe" class="absolute w-0 h-0 z-10  transition-all ease-in-out duration-300  right-6 bottom-15 "
-    src="https://discordapp.com/widget?id=894213761102123128&theme=dark&username=" allowtransparency="true"
-    frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-  </iframe>
-
+    absolute z-10 right-0 bottom-15" src="@asset('images/social/discord.png')"></button>
+  <iframe id="iframe" class="absolute w-0 h-0 z-10 transition-all ease-in-out duration-300 right-6 bottom-15 "
+    src="https://discord.com/widget?id=852449770940923925&theme=dark" allowtransparency="true" frameborder="0"
+    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
   @endif
 

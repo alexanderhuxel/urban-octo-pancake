@@ -79,6 +79,46 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_617054e06f085",
+                    "label": "Teammitglieder",
+                    "name": "teamMemberSlots",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_617054f66f086",
+                            "label": "Teammitglied",
+                            "name": "teamMember",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                },
+                {
                     "key": "field_616211fb54dd8",
                     "label": "Punkte",
                     "name": "pointSlots",
@@ -161,5 +201,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1633820634
+    "modified": 1634751760
 }

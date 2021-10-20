@@ -17,11 +17,10 @@
 $tournaments = new WP_Query(array('post_type' => 'Tournaments'));
 
 
-console_log($tournaments->posts);
 @endphp
 
 @if ($tournaments->have_posts())
-<div class="grid grid-cols-3 justify-items-center mb-3 gap-5 ">
+<div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-items-center mb-3 gap-5 ">
     @while ($tournaments->have_posts())
     @php
     $tournaments->the_post();
@@ -48,7 +47,7 @@ console_log($tournaments->posts);
             console_log($tournamentTeam);
             @endphp
 
-            <span class="flex flex-row mb-2 items-center">
+            <span class="flex flex-row mb-2 items-center w-full max-w-37">
                 @switch($index)
                 @case(1)
                 <img class="mr-1 w-6 h-6" src="@asset('images/first.svg')">
@@ -64,18 +63,20 @@ console_log($tournaments->posts);
                 @break
                 @endswitch
 
-                <p class="font-quicksand text-body  mr-2.5 text-white-100">{{ $tournamentTeam }}</p>
+                <p class="font-quicksand text-body w-15 mr-2.5 text-white-100">{{ $tournamentTeam }}</p>
 
-                @if (have_rows('pointSlots' , get_the_ID()))
-                @while (have_rows('pointSlots', get_the_ID()))
-                @php
-                the_row();
-                $tournamentPoints = get_sub_field('points', get_the_ID());
-                @endphp
-                <p class="font-quicksand  text-body mx-1 text-white-100">{{ $tournamentPoints }}
-                </p>
-                @endwhile
-                @endif
+                <span class="flex w-15 justify-center">
+                    @if (have_rows('pointSlots' , get_the_ID()))
+                    @while (have_rows('pointSlots', get_the_ID()))
+                    @php
+                    the_row();
+                    $tournamentPoints = get_sub_field('points', get_the_ID());
+                    @endphp
+                    <p class="font-quicksand  text-body mx-1 text-white-100">{{ $tournamentPoints }}
+                    </p>
+                    @endwhile
+                    @endif
+                </span>
 
 
                 <p

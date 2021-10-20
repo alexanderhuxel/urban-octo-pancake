@@ -2159,6 +2159,15 @@ figcaption{
   width: 256px;
 }
 
+.menu-footermenu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .menu-footermenu-container .menu {
   margin-right: 0px;
   display: -webkit-box;
@@ -2168,6 +2177,9 @@ figcaption{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-left: 0px;
   --tw-text-opacity: 1;
   color: rgba(3, 3, 5, var(--tw-text-opacity));

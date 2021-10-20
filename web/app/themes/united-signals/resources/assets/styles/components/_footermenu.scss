@@ -1,6 +1,8 @@
 .menu-footermenu-container {
+  @apply flex items-center;
+
   .menu {
-    @apply flex text-black-100  md:mb-0 pl-0 items-center list-none mr-0 md:mr-5;
+    @apply flex text-black-100  md:mb-0 pl-0 items-center justify-center list-none mr-0 md:mr-5;
 
     .menu-item {
       @apply pl-0 mb-0 flex items-center;

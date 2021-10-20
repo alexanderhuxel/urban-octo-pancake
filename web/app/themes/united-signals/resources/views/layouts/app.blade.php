@@ -2,7 +2,7 @@
 <html {!! get_language_attributes() !!}>
     @include('partials.head')
 
-    <body id="body" class="flex flex-col justify-center   items-center bg-black-100  overflow-x-hidden">
+    <body id="body" class="flex  flex-col justify-center   items-center bg-black-100  overflow-x-hidden">
         {{-- <div class="barba-animation"></div>
         <div id="barba-wrapper" data-barba="wrapper">
             <div class="barba-container" data-barba="container"> --}}

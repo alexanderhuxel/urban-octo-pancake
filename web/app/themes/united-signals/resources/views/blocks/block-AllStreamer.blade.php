@@ -68,7 +68,7 @@ console_log($streamer);
             @endphp
             <div class="flex w-38 bg-black-200 flex-col relative">
                 <a class="absolute inset-0 border" href="{{ get_permalink() }}"></a>
-                <img src="{!! $imageUrl['0'] !!}">
+                <img class="max-h-37 object-cover" src="{!! $imageUrl['0'] !!}">
                 <div class="flex flex-col">
                     <span class="ml-2.5 mt-4 mb-1.5">
                         <h2 class="text-white-200 mb-1 font-deathrattle">
@@ -81,7 +81,7 @@ console_log($streamer);
                     <hr class="text-white-300 opacity-10" />
                     <div class="flex mt-1.5 mb-2 justify-between items-center">
                         @if (have_rows('streamerLinkSlots', get_the_ID()))
-                        <ul class="list-none pl-0 ml-2.5 mb-0 flex flex-row">
+                        <ul class="list-none pl-0 ml-2.5 mb-0 flex flex-row z-10">
                             @while (have_rows('streamerLinkSlots', get_the_ID()))
                             @php
                             the_row();
@@ -91,13 +91,22 @@ console_log($streamer);
                                 <a target="_blank" href="{{ $link }}">
                                     @switch($link)
                                     @case(str_contains($link, 'facebook'))
-                                    <img class="w-2 h-2 ml-2" src="@asset('images/facebook.svg')" />
+                                    <img class="w-2 h-2 ml-2" alt="facebook"
+                                        src="@asset('images/social/facebook.png')" />
                                     @break
                                     @case(str_contains($link, 'instagram'))
-                                    <img class="w-2 h-2 ml-2" src="@asset('images/instagram.svg')" />
+                                    <img class="w-2 h-2 ml-2" alt="instagram"
+                                        src="@asset('images/social/instagram.png')" />
                                     @break
                                     @case(str_contains($link, 'twitch'))
-                                    <img class="w-2 h-2 ml-2" src="@asset('images/twitch.svg')" />
+                                    <img class="w-2 h-2 ml-2" alt="twitch" src="@asset('images/social/twitch.png')" />
+                                    @break
+                                    @case(str_contains($link, 'youtube'))
+                                    <img class="w-2 h-2 ml-2" alt="youtube" src="@asset('images/social/youtube.png')" />
+                                    @break
+                                    @case(str_contains($link, 'tiktok'))
+                                    <img class="w-2 h-2 ml-2" alt="youtube" src="@asset('images/social/tiktok.png')" />
+                                    @break
                                     @endswitch
                                 </a>
                             </li>
@@ -115,7 +124,6 @@ console_log($streamer);
             @endwhile
 
             @endif
-
 
 
 

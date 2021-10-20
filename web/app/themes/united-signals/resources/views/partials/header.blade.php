@@ -1,4 +1,4 @@
-<div class="wrapper w-full pt-6 px-2 md:px-5 xl:px-20">
+<div class="wrapper w-full pt-2 px-2 md:px-5 xl:px-20">
     <header class="w-full border items-center flex justify-between ">
 
         <a href="{{ get_home_url()}}">
