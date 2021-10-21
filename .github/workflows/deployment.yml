@@ -19,7 +19,6 @@ jobs:
         with:
           node-version: 12.18
 
-
       - name: 💻 FTP Deploy 💻
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
