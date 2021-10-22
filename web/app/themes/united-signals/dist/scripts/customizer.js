@@ -1643,7 +1643,11 @@ module.exports = jQuery;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
+<<<<<<< HEAD
 /******/ 		__webpack_require__.h = function() { return "0135b888feafb750ed21"; }
+=======
+/******/ 		__webpack_require__.h = function() { return "fd9f5a5b50f1994d1a8e"; }
+>>>>>>> master
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
