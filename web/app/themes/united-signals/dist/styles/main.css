@@ -2155,6 +2155,108 @@ figcaption{
   width: 304px;
 }
 
+.menu-footermenu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-footermenu-container .menu {
+  margin-right: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0px;
+  --tw-text-opacity: 1;
+  color: rgba(3, 3, 5, var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .menu-footermenu-container .menu{
+    margin-right: 40px;
+    margin-bottom: 0px;
+  }
+}
+
+.menu-footermenu-container .menu .menu-item {
+  margin-bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0px;
+}
+
+.menu-footermenu-container .menu .menu-item a {
+  margin-right: 8px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(252, 253, 254, var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .menu-footermenu-container .menu .menu-item a{
+    margin-right: 16px;
+  }
+}
+
+.menu-frontpagemenu-container {
+  height: 100%;
+  width: 100%;
+}
+
+.menu-frontpagemenu-container #menu-frontpagemenu {
+  margin-bottom: 0px;
+  margin-left: 160px;
+  list-style-type: none;
+  padding-top: 160px;
+  padding-left: 0px;
+}
+
+h1, .menu-frontpagemenu-container .menu-item, h2, .text-h2, h3, .text-h3, h4, .text-h4, h5, .text-h5, .text-h1-mobile{
+  margin-bottom: 40px;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+h1, .menu-frontpagemenu-container .menu-item{
+  font-size: 4rem;
+}
+
+h1 lineHeight, .menu-frontpagemenu-container .menu-item lineHeight{
+  line-height: 6.375rem;
+}
+
+h1, .menu-frontpagemenu-container .menu-item{
+  font-family: Libre Baskerville", serif;
+}
+
+.menu-frontpagemenu-container .menu-item{
+  margin-bottom: 0px;
+  padding-left: 0px;
+  font-family: roadrage;
+  font-size: 4rem;
+  line-height: 6.375rem;
+}
+
+#fullscreenMenu.active {
+  --tw-translate-x: 0px;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

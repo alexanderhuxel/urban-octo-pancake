@@ -5,7 +5,7 @@
             <img class="w-5 h-5" src="@asset('images/logo_plain.png')" alt="Logo der Webseite">
         </a>
 
-        <button class="flex flex-col  items-center justify-around w-4 h-4 ">
+        <button id="menu-button" class="flex flex-col  z-20 items-center justify-around w-4 h-4 ">
             <span class="w-4 h-0.75 bg-white-200"></span>
             <span class="w-4 h-0.75  bg-white-200"></span>
             <span class="w-4 h-0.75 bg-white-200"></span>

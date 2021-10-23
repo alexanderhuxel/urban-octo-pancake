@@ -2444,13 +2444,299 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js":
+/*!***********************************************************************************!*\
+  !*** ../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js ***!
+  \***********************************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+
+/* eslint-env browser */
+
+/*
+  eslint-disable
+  no-console,
+  func-names
+*/
+var normalizeUrl = __webpack_require__(/*! ./normalize-url */ "../../node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js");
+
+var srcByModuleId = Object.create(null);
+var noDocument = typeof document === 'undefined';
+var forEach = Array.prototype.forEach;
+
+function debounce(fn, time) {
+  var timeout = 0;
+  return function () {
+    var self = this; // eslint-disable-next-line prefer-rest-params
+
+    var args = arguments;
+
+    var functionCall = function functionCall() {
+      return fn.apply(self, args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(functionCall, time);
+  };
+}
+
+function noop() {}
+
+function getCurrentScriptUrl(moduleId) {
+  var src = srcByModuleId[moduleId];
+
+  if (!src) {
+    if (document.currentScript) {
+      src = document.currentScript.src;
+    } else {
+      var scripts = document.getElementsByTagName('script');
+      var lastScriptTag = scripts[scripts.length - 1];
+
+      if (lastScriptTag) {
+        src = lastScriptTag.src;
+      }
+    }
+
+    srcByModuleId[moduleId] = src;
+  }
+
+  return function (fileMap) {
+    if (!src) {
+      return null;
+    }
+
+    var splitResult = src.split(/([^\\/]+)\.js$/);
+    var filename = splitResult && splitResult[1];
+
+    if (!filename) {
+      return [src.replace('.js', '.css')];
+    }
+
+    if (!fileMap) {
+      return [src.replace('.js', '.css')];
+    }
+
+    return fileMap.split(',').map(function (mapRule) {
+      var reg = new RegExp("".concat(filename, "\\.js$"), 'g');
+      return normalizeUrl(src.replace(reg, "".concat(mapRule.replace(/{fileName}/g, filename), ".css")));
+    });
+  };
+}
+
+function updateCss(el, url) {
+  if (!url) {
+    if (!el.href) {
+      return;
+    } // eslint-disable-next-line
+
+
+    url = el.href.split('?')[0];
+  }
+
+  if (!isUrlRequest(url)) {
+    return;
+  }
+
+  if (el.isLoaded === false) {
+    // We seem to be about to replace a css link that hasn't loaded yet.
+    // We're probably changing the same file more than once.
+    return;
+  }
+
+  if (!url || !(url.indexOf('.css') > -1)) {
+    return;
+  } // eslint-disable-next-line no-param-reassign
+
+
+  el.visited = true;
+  var newEl = el.cloneNode();
+  newEl.isLoaded = false;
+  newEl.addEventListener('load', function () {
+    if (newEl.isLoaded) {
+      return;
+    }
+
+    newEl.isLoaded = true;
+    el.parentNode.removeChild(el);
+  });
+  newEl.addEventListener('error', function () {
+    if (newEl.isLoaded) {
+      return;
+    }
+
+    newEl.isLoaded = true;
+    el.parentNode.removeChild(el);
+  });
+  newEl.href = "".concat(url, "?").concat(Date.now());
+
+  if (el.nextSibling) {
+    el.parentNode.insertBefore(newEl, el.nextSibling);
+  } else {
+    el.parentNode.appendChild(newEl);
+  }
+}
+
+function getReloadUrl(href, src) {
+  var ret; // eslint-disable-next-line no-param-reassign
+
+  href = normalizeUrl(href, {
+    stripWWW: false
+  }); // eslint-disable-next-line array-callback-return
+
+  src.some(function (url) {
+    if (href.indexOf(src) > -1) {
+      ret = url;
+    }
+  });
+  return ret;
+}
+
+function reloadStyle(src) {
+  if (!src) {
+    return false;
+  }
+
+  var elements = document.querySelectorAll('link');
+  var loaded = false;
+  forEach.call(elements, function (el) {
+    if (!el.href) {
+      return;
+    }
+
+    var url = getReloadUrl(el.href, src);
+
+    if (!isUrlRequest(url)) {
+      return;
+    }
+
+    if (el.visited === true) {
+      return;
+    }
+
+    if (url) {
+      updateCss(el, url);
+      loaded = true;
+    }
+  });
+  return loaded;
+}
+
+function reloadAll() {
+  var elements = document.querySelectorAll('link');
+  forEach.call(elements, function (el) {
+    if (el.visited === true) {
+      return;
+    }
+
+    updateCss(el);
+  });
+}
+
+function isUrlRequest(url) {
+  // An URL is not an request if
+  // It is not http or https
+  if (!/^https?:/i.test(url)) {
+    return false;
+  }
+
+  return true;
+}
+
+module.exports = function (moduleId, options) {
+  if (noDocument) {
+    console.log('no window.document found, will not HMR CSS');
+    return noop;
+  }
+
+  var getScriptSrc = getCurrentScriptUrl(moduleId);
+
+  function update() {
+    var src = getScriptSrc(options.filename);
+    var reloaded = reloadStyle(src);
+
+    if (options.locals) {
+      console.log('[HMR] Detected local css modules. Reload all css');
+      reloadAll();
+      return;
+    }
+
+    if (reloaded) {
+      console.log('[HMR] css reload %s', src.join(' '));
+    } else {
+      console.log('[HMR] Reload all css');
+      reloadAll();
+    }
+  }
+
+  return debounce(update, 50);
+};
+
+/***/ }),
+
+/***/ "../../node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js":
+/*!****************************************************************************!*\
+  !*** ../../node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js ***!
+  \****************************************************************************/
+/***/ (function(module) {
+
+"use strict";
+
+
+/* eslint-disable */
+function normalizeUrl(pathComponents) {
+  return pathComponents.reduce(function (accumulator, item) {
+    switch (item) {
+      case '..':
+        accumulator.pop();
+        break;
+
+      case '.':
+        break;
+
+      default:
+        accumulator.push(item);
+    }
+
+    return accumulator;
+  }, []).join('/');
+}
+
+module.exports = function (urlString) {
+  urlString = urlString.trim();
+
+  if (/^data:/i.test(urlString)) {
+    return urlString;
+  }
+
+  var protocol = urlString.indexOf('//') !== -1 ? urlString.split('//')[0] + '//' : '';
+  var components = urlString.replace(new RegExp(protocol, 'i'), '').split('/');
+  var host = components[0].toLowerCase().replace(/\.$/, '');
+  components[0] = '';
+  var path = normalizeUrl(components);
+  return protocol + host + path;
+};
+
+/***/ }),
+
 /***/ "./styles/main.scss":
 /*!**************************!*\
   !*** ./styles/main.scss ***!
   \**************************/
-/***/ (function() {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ../../node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ../../node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"}\".\n   ╷\n16 │   }\r\n   │    ^\n   ╵\n  resources\\assets\\styles\\components\\_frontpagemenu.scss 16:4  @import\n  resources\\assets\\styles\\main.scss 36:9                       root stylesheet\n    at processResult (X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\webpack\\lib\\NormalModule.js:701:19)\n    at X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\webpack\\lib\\NormalModule.js:807:5\n    at X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\sass\\sass.dart.js:93417:16)\n    at _render_closure1.call$2 (X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\sass\\sass.dart.js:81775:12)\n    at _RootZone.runBinary$3$3 (X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\sass\\sass.dart.js:27547:18)\n    at _FutureListener.handleError$1 (X:\\Programmierung\\urban-octo-pancake\\web\\app\\themes\\united-signals\\node_modules\\sass\\sass.dart.js:26096:19)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+    if(true) {
+      // 1634989136583
+      var cssReload = __webpack_require__(/*! ../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  
 
 /***/ }),
 
@@ -3364,7 +3650,7 @@ module.exports = jQuery;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "db927357b308810afa27"; }
+/******/ 		__webpack_require__.h = function() { return "d0df786a385ea7508c57"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
