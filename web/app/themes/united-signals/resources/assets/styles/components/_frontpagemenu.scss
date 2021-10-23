@@ -1,0 +1,16 @@
+.menu-frontpagemenu-container {
+  @apply w-full h-full;
+
+  #menu-frontpagemenu {
+    @apply list-none  pl-0 mb-0 pt-20 ml-20;
+  }
+
+  .menu-item {
+    @apply font-roadrage text-h1  pl-0 mb-0;
+  }
+}
+
+#fullscreenMenu {
+  &.active {
+    @apply translate-x-0;
+  }

@@ -43,7 +43,8 @@ console_log($streamer);
         $streamerDescription = get_field('streamerDescription', get_the_ID());
         @endphp
 
-        <div class="flex w-38 bg-black-200 flex-col">
+        <div class="flex w-38 bg-black-200 flex-col relative">
+            <a class="absolute inset-0" href="{{ get_permalink() }}"></a>
             <img src="{!! $imageUrl['0'] !!}">
             <div class="flex flex-col">
                 <span class="ml-2.5 mt-4 mb-1.5">

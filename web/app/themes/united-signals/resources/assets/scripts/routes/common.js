@@ -1,16 +1,27 @@
 export default {
   init() {
-    // JavaScript to be fired on all pages
-    // let openState = false;
-    // document.getElementById("button").addEventListener("click", () => {
-    //   if (!openState) {
-    //     document.getElementById("body").classList.add("mobilemenu--open");
-    //     openState = true;
-    //   } else {
-    //     document.getElementById("body").classList.remove("mobilemenu--open");
-    //     openState = false;
-    //   }
-    // });
+    var status = false;
+    $("#discord").click(function () {
+      console.log("test");
+      if (status) {
+        $("#iframe").removeClass("active");
+        status = false;
+      } else {
+        $("iframe").addClass("active");
+        status = true;
+      }
+    });
+
+    var menuState = false;
+    $("#menu-button").click(function () {
+      if (menuState) {
+        $("#fullscreenMenu").removeClass("active");
+        menuState = false;
+      } else {
+        $("#fullscreenMenu").addClass("active");
+        menuState = true;
+      }
+    });
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired

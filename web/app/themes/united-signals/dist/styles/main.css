@@ -2150,6 +2150,11 @@ figcaption{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+#iframe.active {
+  height: 448px;
+  width: 304px;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
