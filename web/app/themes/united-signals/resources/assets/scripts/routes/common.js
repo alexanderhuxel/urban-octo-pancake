@@ -1,24 +1,24 @@
 export default {
   init() {
     var status = false;
-    $("#discord").click(function () {
-      console.log("test");
+    $('#discord').click(function () {
+      console.log('test');
       if (status) {
-        $("#iframe").removeClass("active");
+        $('#iframe').removeClass('active');
         status = false;
       } else {
-        $("iframe").addClass("active");
+        $('iframe').addClass('active');
         status = true;
       }
     });
 
     var menuState = false;
-    $("#menu-button").click(function () {
+    $('#menu-button').click(function () {
       if (menuState) {
-        $("#fullscreenMenu").removeClass("active");
+        $('#fullscreenMenu').removeClass('active');
         menuState = false;
       } else {
-        $("#fullscreenMenu").addClass("active");
+        $('#fullscreenMenu').addClass('active');
         menuState = true;
       }
     });
