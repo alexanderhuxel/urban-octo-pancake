@@ -11,7 +11,8 @@
         $imageUrl = wp_get_attachment_image_src($image,$size);
         @endphp
 
-        <img class="md:mr-4 self-center mb-2 md:mb-0 max-w-md" src="{!! $imageUrl['0'] !!}" />
+        <img class="md:mr-4 self-center mb-2 md:mb-0 max-w-md rounded-full w-32 h-32 object-cover"
+            src="{!! $imageUrl['0'] !!}" />
         <div class="flex flex-col self-center md:ml-4 justify-center">
             <h2 class="text-white-200 font-deathrattle mb-2.5 text-h2">
                 {{get_the_title()}}

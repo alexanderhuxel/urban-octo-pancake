@@ -43,9 +43,9 @@ console_log($streamer);
         $streamerDescription = get_field('streamerDescription', get_the_ID());
         @endphp
 
-        <div class="flex w-38 bg-black-200 flex-col relative">
+        <div class="flex w-38  bg-black-200 flex-col relative">
             <a class="absolute inset-0" href="{{ get_permalink() }}"></a>
-            <img src="{!! $imageUrl['0'] !!}">
+            <img class="h-38 object-cover" src="{!! $imageUrl['0'] !!}">
             <div class="flex flex-col">
                 <span class="ml-2.5 mt-4 mb-1.5">
                     <h2 class="text-white-200 mb-1 font-deathrattle">
@@ -68,13 +68,16 @@ console_log($streamer);
                             <a target="_blank" href="{{ $link }}">
                                 @switch($link)
                                 @case(str_contains($link, 'facebook'))
-                                <img class="w-2 h-2 ml-2" src="@asset('images/facebook.svg')" />
+                                <img class="w-2 h-2 ml-2" src="@asset('images/social/facebook.png')" />
                                 @break
                                 @case(str_contains($link, 'instagram'))
-                                <img class="w-2 h-2 ml-2" src="@asset('images/instagram.svg')" />
+                                <img class="w-2 h-2 ml-2" src="@asset('images/social/instagram.png')" />
+                                @break
+                                @case(str_contains($link, 'tiktok'))
+                                <img class="w-2 h-2 ml-2" src="@asset('images/social/tiktok.png')" />
                                 @break
                                 @case(str_contains($link, 'twitch'))
-                                <img class="w-2 h-2 ml-2" src="@asset('images/twitch.svg')" />
+                                <img class="w-2 h-2 ml-2" src="@asset('images/social/twitch.png')" />
                                 @endswitch
                             </a>
                         </li>
