@@ -46,7 +46,6 @@
                         gap-5
                         md:grid-cols-3
                         my-7
-                        justify-items-center
                       ">
 
 
@@ -56,7 +55,6 @@
             the_row();
             $gameSelection = get_sub_field('streamerGame');
             @endphp
-
             @if ($gameSelection == 'Apex Legends')
             <img class="shadow-button" src="@asset('images/apex.png')" />
             @endif

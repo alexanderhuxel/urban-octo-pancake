@@ -29,7 +29,7 @@
 
 
         <div id="fullscreenMenu"
-            class="w-screen h-screen z-10 transition-all  ease-in-out duration-300 transform translate-x-full absolute inset-0 bg-black-100 overflow-hidden">
+            class="w-screen h-screen bg-black-100 z-10 transition-all  ease-in-out duration-300 transform translate-x-full absolute inset-0 overflow-hidden">
             {{ wp_nav_menu(array('menu' => 'frontpageMenu')) }}
         </div>
 

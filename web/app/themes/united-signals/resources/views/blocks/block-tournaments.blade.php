@@ -11,7 +11,7 @@
   SupportsMode: true
   SupportsMultiple: true
 --}}
-
+// TODO: Swipper ?
 
 @php
 $tournaments = new WP_Query(array('post_type' => 'Tournaments'));
@@ -21,7 +21,7 @@ console_log($tournaments->posts);
 @endphp
 
 @if ($tournaments->have_posts())
-<div class="grid grid-cols-3 justify-items-center mb-3 gap-5 ">
+<div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-items-center mb-3 gap-5 ">
     @while ($tournaments->have_posts())
     @php
     $tournaments->the_post();
@@ -64,22 +64,21 @@ console_log($tournaments->posts);
                 @break
                 @endswitch
 
-                <p class="font-quicksand text-body  mr-2.5 text-white-100">{{ $tournamentTeam }}</p>
-
-                @if (have_rows('pointSlots' , get_the_ID()))
-                @while (have_rows('pointSlots', get_the_ID()))
-                @php
-                the_row();
-                $tournamentPoints = get_sub_field('points', get_the_ID());
-                @endphp
-                <p class="font-quicksand  text-body mx-1 text-white-100">{{ $tournamentPoints }}
-                </p>
-                @endwhile
-                @endif
-
-
+                <p class="font-quicksand text-body w-15 mr-2.5 text-white-100">{{ $tournamentTeam }}</p>
+                <span class="w-15 flex">
+                    @if (have_rows('pointSlots' , get_the_ID()))
+                    @while (have_rows('pointSlots', get_the_ID()))
+                    @php
+                    the_row();
+                    $tournamentPoints = get_sub_field('points', get_the_ID());
+                    @endphp
+                    <p class="font-quicksand  text-body mx-1 text-white-100">{{ $tournamentPoints }}
+                    </p>
+                    @endwhile
+                    @endif
+                </span>
                 <p
-                    class="font-quicksand text-body ml-1 border border-white-100 flex items-center rounded-full p-1 h-4 w-4 text-white-100">
+                    class="font-quicksand text-body ml-1 border border-white-100 flex justify-center items-center rounded-full p-1 h-4 w-4 text-white-100">
                     {{ $tournamentResult }}</p>
 
             </span>

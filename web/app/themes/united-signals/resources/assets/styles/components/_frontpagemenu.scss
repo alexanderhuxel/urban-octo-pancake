@@ -2,11 +2,11 @@
   @apply w-full h-full;
 
   #menu-frontpagemenu {
-    @apply list-none  pl-0 mb-0 pt-20 ml-20;
+    @apply list-none  pl-0 mb-0 md:pt-20 md:ml-20 flex flex-col;
   }
 
   .menu-item {
-    @apply font-roadrage text-h1  pl-0 mb-0;
+    @apply font-roadrage md:text-h1 text-h2  pl-0 mb-0;
   }
 }
 
