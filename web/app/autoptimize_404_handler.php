@@ -27,7 +27,7 @@ if ( strpos( $original_request, 'uucss/uucss-' ) !== false ) {
 }
 
 $fallback_target  = preg_replace( '/(.*)_(?:[a-z0-9]{32})\.(js|css)$/', '${1}_fallback.${2}', $original_request );
-$ao_cache_dir     = '/Users/nicolaheck/GIT/051-united-signals/web/app/cache/autoptimize/';
+$ao_cache_dir     = '/Users/alexanderhuxel/Sites/000-Artistgaming/web/app/cache/autoptimize/';
 $js_or_css        = pathinfo( $original_request, PATHINFO_EXTENSION );
 $fallback_path    = $ao_cache_dir . $js_or_css . '/autoptimize_fallback.' . $js_or_css;
 
