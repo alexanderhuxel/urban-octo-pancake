@@ -25,6 +25,6 @@ jobs:
           server: ftp.alexhuxel.de
           # server-dir // declare de directiory where will be uploaded
           server-dir: ./
-          username: f0144254
-          password: eHy2Ero86ngwwz7Z
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
           local-dir: ./
