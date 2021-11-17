@@ -17,9 +17,11 @@ export default {
     $("#menu-button").click(function () {
       if (menuState) {
         $("#fullscreenMenu").removeClass("active");
+        $("#html").removeClass("noscroll");
         menuState = false;
       } else {
         $("#fullscreenMenu").addClass("active");
+        $("#html").addClass("noscroll");
         menuState = true;
       }
     });

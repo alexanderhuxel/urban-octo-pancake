@@ -1,5 +1,5 @@
 <!doctype html>
-<html {!! get_language_attributes() !!}>
+<html id="html" {!! get_language_attributes() !!}>
     @include('partials.head')
 
     <body id="body" class="flex relative flex-col overflow-x-hidden justify-center items-center bg-black-100">
