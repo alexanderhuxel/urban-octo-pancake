@@ -126,7 +126,7 @@ const globalStyles = ({ addBase, config, theme }) => {
 };
 
 module.exports = {
-  mode: "",
+  mode: "jit",
   purge: {
     content: [
       // relative path globs to template files
