@@ -5,3 +5,7 @@ html {
     @apply overflow-hidden;
   }
 }
+
+.test {
+  min-height: calc(100vh - 180px);
+}
