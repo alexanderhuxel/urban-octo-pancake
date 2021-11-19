@@ -1,5 +1,12 @@
 {
   "images/404.svg": "images/404_b8967d9befc3d6b0aa88.svg",
+  "images/favicons/android-chrome-192x192.png": "images/favicons/android-chrome-192x192_5cecdb8cd47ad6243bca.png",
+  "images/favicons/android-chrome-512x512.png": "images/favicons/android-chrome-512x512_f5a62a5708d08d6649c2.png",
+  "images/favicons/apple-touch-icon.png": "images/favicons/apple-touch-icon_f1f3852213d3751e309a.png",
+  "images/favicons/favicon-16x16.png": "images/favicons/favicon-16x16_a5c77a085b0b080fe715.png",
+  "images/favicons/favicon-32x32.png": "images/favicons/favicon-32x32_97aaf9b689422e2e979e.png",
+  "images/favicons/favicon.ico": "images/favicons/favicon_f0c08012f7a26e47029d.ico",
+  "images/favicons/site.webmanifest": "images/favicons/site_1c337fa2fa1515591f8d.webmanifest",
   "images/games/apex.jpg": "images/games/apex_e66c3ce5887c8010b322.jpg",
   "images/games/naraka.png": "images/games/naraka_ab956ff3662ed5267dc6.png",
   "images/games/newworld.jpg": "images/games/newworld_e1b595bc2b644e865264.jpg",
@@ -12,6 +19,6 @@
   "images/social/twitch.png": "images/social/twitch_71a6fea005be4d32a007.png",
   "images/social/youtube.png": "images/social/youtube_577d70315c670e577749.png",
   "scripts/customizer.js": "scripts/customizer_096669945160f37bcbf0.js",
-  "styles/main.css": "styles/main_7fea523a8c02c807a639.css",
+  "styles/main.css": "styles/main_cd4bc67959cad7c91937.css",
   "scripts/main.js": "scripts/main_b726090e5c8b24432a03.js"
 }
