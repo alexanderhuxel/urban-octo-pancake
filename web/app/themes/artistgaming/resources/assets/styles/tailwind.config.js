@@ -30,12 +30,12 @@ const globalStyles = ({ addBase, config, theme }) => {
     'h1, .text-h1': {
       fontSize: config('theme.fontSize.h1[0]'),
       lineHeight: config('theme.fontSize.h1[1]'),
-      fontFamily: config('theme.fontFamily.serif'),
+      fontFamily: config('theme.fontFamily.roadrage'),
     },
     '.text-h1-mobile': {
       fontSize: theme('fontSize.h1mobile[0]'),
       lineHeight: theme('fontSize.h1mobile[1]'),
-      fontFamily: config('theme.fontFamily.serif'),
+      fontFamily: config('theme.fontFamily.roadrage'),
     },
     '.text-h2-mobile': {
       fontSize: theme('fontSize.h1mobile[0]'),
@@ -198,7 +198,7 @@ module.exports = {
     },
     fontFamily: {
       sans: 'century-gothic, sans-serif',
-      serif: 'Libre Baskerville", serif',
+      serif: 'Libre Baskerville, serif',
       roadrage: 'roadrage',
       deathrattle: 'deathrattle',
       quicksand: 'Quicksand',
