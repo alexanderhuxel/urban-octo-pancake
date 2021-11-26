@@ -13,7 +13,7 @@
 @php
 the_content();
 @endphp
-</div>
+
 @else
 @php
 the_content()

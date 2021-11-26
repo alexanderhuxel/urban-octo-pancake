@@ -138,7 +138,6 @@
     </div>
     <!-- TWITCH EMBED WITH SCRIPT -->
 </div>
-</article>
 
 
 @endsection

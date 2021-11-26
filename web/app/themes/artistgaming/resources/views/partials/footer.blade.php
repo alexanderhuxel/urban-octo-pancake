@@ -34,9 +34,9 @@
           @break
           @case(str_contains($link['url'], 'twitch'))
           <li class="pl-0 mb-0">
-            <a target="_blank" rel="noopener noreferrer href=" {{ $link['url'] }} ">
-                <img class=" w-4 h-4 mr-1 md:mr-2" src="@asset('images/social/twitch.png')"
-              alt="{{$link['title']}}" /></a>
+            <a target="_blank" rel="noopener noreferrer" href=" {{ $link['url'] }} ">
+              <img class=" w-4 h-4 mr-1 md:mr-2" src="@asset('images/social/twitch.png')"
+                alt="{{$link['title']}}" /></a>
           </li>
           @break
           @endswitch
@@ -46,4 +46,4 @@
       </div>
     </div>
   </footer>
-  <div>
+</div>
