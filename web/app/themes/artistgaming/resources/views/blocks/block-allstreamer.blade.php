@@ -44,7 +44,7 @@ console_log($streamer);
                 <img class="h-38 object-cover" src="{!! $imageUrl['0'] !!}">
                 <div class="flex flex-col">
                     <span class="ml-2.5 mt-4 mb-1.5">
-                        <h2 class="text-white-200 mb-1 font-deathrattle">
+                        <h2 class="text-white-200 text-h2 mb-1 font-deathrattle">
                             {{$streamerName }}
                         </h2>
                         <p class="text-white-200 font-quicksand">
