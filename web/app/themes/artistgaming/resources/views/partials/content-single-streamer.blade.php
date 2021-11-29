@@ -135,7 +135,7 @@
                       width: "100%",
                       height: 600,
                       channel: $('#streamerName').text(),
-                      parent: ["alexhuxel.de", "artistgaming.alexhuxel.de"],
+                      parent: ["alexhuxel.de", "https://artistgaming.alexhuxel.de"],
                     });
                   });
         </script>
