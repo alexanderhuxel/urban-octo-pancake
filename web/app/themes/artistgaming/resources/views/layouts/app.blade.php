@@ -3,7 +3,7 @@
     @include('partials.head')
 
     <body id="body" class="flex relative flex-col overflow-x-hidden justify-center items-center bg-black-100">
-        <div class="overflow-x-hidden relative">
+        <div class="overflow-x-hidden md:overflow-x-visible relative">
             <div class="barba-animation"></div>
             <div id="barba-wrapper" data-barba="wrapper">
                 <div class="barba-container" data-barba="container">
