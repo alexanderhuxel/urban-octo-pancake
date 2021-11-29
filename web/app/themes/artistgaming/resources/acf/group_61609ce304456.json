@@ -22,6 +22,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_61a53194384a8",
+            "label": "Name des Streams",
+            "name": "streamerStreamName",
+            "type": "text",
+            "instructions": "100% wichtig das der Name stimmt sonst funktioniert die einbettung des Streams nicht",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6160ab3c19e3f",
             "label": "Herkunft",
             "name": "streamerOrgin",
@@ -307,5 +326,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1633877498
+    "modified": 1638216143
 }

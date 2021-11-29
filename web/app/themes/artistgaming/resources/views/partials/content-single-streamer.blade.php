@@ -13,6 +13,7 @@
         $streamerOrgin = get_field('streamerOrgin');
         $streamerState = get_field('streamerState');
         $streamerConsole = get_field('streamerConsole');
+        $streamerStreamName = get_field('streamerStreamName');
         @endphp
 
         <img class="md:mr-4 self-center mb-2 md:mb-0 max-w-md rounded-full w-32 h-32 object-cover"
@@ -21,6 +22,9 @@
             <h2 class="text-white-200 font-deathrattle mb-2.5 text-h2">
                 {{get_the_title()}}
             </h2>
+            <p id="streamerName" class="hidden">
+                {{ strtolower($streamerStreamName) }}
+            </p>
             <span>
                 @if ($streamerAge)
                 <p class="text-white-200 font-quicksand text-body">
@@ -122,7 +126,7 @@
             stream
         </h2>
     </div>
-    <!-- TWITCH EMBED WITH SCRIPT -->
+
     <div class="mb-7 shadow-button" id="twitch-embed">
 
         <script type="text/javascript">
@@ -130,13 +134,12 @@
                     new Twitch.Embed("twitch-embed", {
                       width: "100%",
                       height: 600,
-                      channel: "energyx89",
+                      channel: $('#streamerName').text(),
                       parent: ["alexhuxel.de", "artistgaming.alexhuxel.de"],
                     });
                   });
         </script>
     </div>
-    <!-- TWITCH EMBED WITH SCRIPT -->
 </div>
 
 
