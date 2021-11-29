@@ -28,16 +28,15 @@
 
 
 
-                        <div id="fullscreenMenu"
-                            class="w-screen h-screen  bg-black-200 z-10 transition-all ease-in-out duration-500 transform translate-x-full  absolute  inset-0">
-                            {{ wp_nav_menu(array('menu' => 'frontpageMenu')) }}
 
-
-                        </div>
                     </div>
                 </div>
             </div>
             @php wp_footer() @endphp
+        </div>
+        <div id="fullscreenMenu"
+            class="w-screen h-screen  bg-black-200 z-10 transition-all ease-in-out duration-500 transform translate-x-full  absolute  inset-0">
+            {{ wp_nav_menu(array('menu' => 'frontpageMenu')) }}
         </div>
     </body>
 
