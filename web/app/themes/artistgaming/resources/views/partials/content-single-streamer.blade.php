@@ -130,7 +130,11 @@
     <div class="mb-7 shadow-button" id="twitch-embed">
 
 
-        <script type="text/javascript">
+        <iframe src="https://player.twitch.tv/?channel=energyx87&parent=artistgaming.alexhuxel.de" height="720"
+            width="1280" allowfullscreen="true">
+        </iframe>
+
+        {{-- <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                     new Twitch.Embed("twitch-embed", {
                       width: "100%",
@@ -139,7 +143,7 @@
                       parent: ["https://alexhuxel.de","https://artistgaming.alexhuxel.de"],
                     });
                   });
-        </script>
+        </script> --}}
     </div>
 </div>
 
