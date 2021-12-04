@@ -1,9 +1,9 @@
-@if (get_the_title() == 'datenschutzerklaerung' || 'impressum')
+@if (get_the_title() == 'datenschutzerklaerung')
 
 <style>
     p,
-    h2,
     h1,
+    h2,
     h3,
     h4,
     li {

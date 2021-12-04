@@ -129,13 +129,14 @@
 
     <div class="mb-7 shadow-button" id="twitch-embed">
 
+
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                     new Twitch.Embed("twitch-embed", {
                       width: "100%",
                       height: 600,
-                      channel: $('#streamerName').text(),
-                      parent: ["alexhuxel.de", "https://artistgaming.alexhuxel.de"],
+                      channel: 'energyx87',
+                      parent: ["https://artistgaming.alexhuxel.de"],
                     });
                   });
         </script>
