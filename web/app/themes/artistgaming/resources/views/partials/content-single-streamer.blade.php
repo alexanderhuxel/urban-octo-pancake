@@ -136,7 +136,7 @@
                       width: "100%",
                       height: 600,
                       channel: 'energyx87',
-                      parent: ["https://artistgaming.alexhuxel.de"],
+                      parent: ["https://alexhuxel.de","https://artistgaming.alexhuxel.de"],
                     });
                   });
         </script>
