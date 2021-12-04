@@ -22,9 +22,7 @@
             <h2 class="text-white-200 font-deathrattle mb-2.5 text-h2">
                 {{get_the_title()}}
             </h2>
-            <p id="streamerName" class="hidden">
-                {{ strtolower($streamerStreamName) }}
-            </p>
+            <input id="streamerName" class="hidden" value="{{ strtolower($streamerStreamName) }}">
             <span>
                 @if ($streamerAge)
                 <p class="text-white-200 font-quicksand text-body">
@@ -129,21 +127,17 @@
 
     <div class="mb-7 shadow-button" id="twitch-embed">
 
-
-        <iframe src="https://player.twitch.tv/?channel=energyx87&parent=artistgaming.alexhuxel.de" height="720"
-            width="1280" allowfullscreen="true">
-        </iframe>
-
-        {{-- <script type="text/javascript">
+        {{-- underscoor doesnt work without work --}}
+        <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                     new Twitch.Embed("twitch-embed", {
                       width: "100%",
                       height: 600,
-                      channel: 'energyx87',
-                      parent: ["https://alexhuxel.de","https://artistgaming.alexhuxel.de"],
+                      channel: $('#streamerName').val(),
+                      parent: ["alexhuxel.de","artistgaming.alexhuxel.de",],
                     });
                   });
-        </script> --}}
+        </script>
     </div>
 </div>
 
