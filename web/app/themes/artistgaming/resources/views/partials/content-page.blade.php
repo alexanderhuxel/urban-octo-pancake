@@ -1,4 +1,4 @@
-@if (get_the_title() == 'datenschutzerklaerung')
+@if (get_the_title() == 'Datenschutzerklaerung & Impressum')
 
 <style>
     p,

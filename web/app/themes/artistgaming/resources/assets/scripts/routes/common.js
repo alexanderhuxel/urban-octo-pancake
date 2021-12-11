@@ -3,7 +3,6 @@ export default {
   init() {
     var status = false;
     $("#discord").click(function () {
-      console.log("test");
       if (status) {
         $("#iframe").removeClass("active");
         status = false;
@@ -16,11 +15,11 @@ export default {
     var menuState = false;
     $("#menu-button").click(function () {
       if (menuState) {
-        $("#fullscreenMenu").removeClass("active");
+        $(".menu-frontpagemenu-container").removeClass("active");
         $("#html").removeClass("noscroll");
         menuState = false;
       } else {
-        $("#fullscreenMenu").addClass("active");
+        $(".menu-frontpagemenu-container").addClass("active");
         $("#html").addClass("noscroll");
         menuState = true;
       }

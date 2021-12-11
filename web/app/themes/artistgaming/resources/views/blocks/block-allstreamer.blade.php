@@ -18,7 +18,6 @@ $blockHasOwnTitle = false;
 // vars
 
 $streamer = new WP_Query(array('post_type' => 'Streamer'));
-console_log($streamer);
 @endphp
 
 @extends('blocklayout.blocklayout')
@@ -37,6 +36,7 @@ console_log($streamer);
             $imageUrl = wp_get_attachment_image_src($imageID,$size);
             $streamerName = get_field('streamerName', get_the_ID());
             $streamerDescription = get_field('streamerDescription', get_the_ID());
+            $streamName = get_field('streamerStreamName', get_the_ID());
             @endphp
 
             <div class="flex w-38  bg-black-200 flex-col relative">
@@ -81,8 +81,50 @@ console_log($streamer);
                         </ul>
                         @endif
                         <div class="flex mr-2.5 items-center justify-center">
-                            <p class="text-white-200 font-quicksand mr-1.5 font-bold">LIVE</p>
+                            @php
+                            $curl = curl_init();
+
+                            curl_setopt_array($curl, array(
+                            CURLOPT_URL => 'https://api.twitch.tv/helix/streams?user_login='.$streamName,
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_ENCODING => '',
+                            CURLOPT_MAXREDIRS => 10,
+                            CURLOPT_TIMEOUT => 0,
+                            CURLOPT_FOLLOWLOCATION => true,
+                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                            CURLOPT_CUSTOMREQUEST => 'GET',
+                            CURLOPT_HTTPHEADER => array(
+                            'Client-ID: gwn6pvqupxfwfn73yvs0hlh6zmzhyv',
+                            'Authorization: Bearer 9dc8a53mb0qc8bww57jxek6gs802df'
+                            ),
+                            ));
+
+                            $response = curl_exec($curl);
+
+                            curl_close($curl);
+                            $response = json_decode($response, true);
+                            $online = true;
+                            if (sizeof($response['data']) !== 0) :
+                            $online = true;
+                            else :
+                            $online = false;
+                            endif;
+                            @endphp
+
+                            <p class="text-white-200 font-quicksand mr-1.5 font-bold">
+                                @if ($online)
+                                LIVE
+                                @else
+                                Offline
+                                @endif
+
+                                @php
+                                @endphp
+                            </p>
+                            @if (sizeof($response['data']) !== 0)
                             <span class="w-4 h-4 animate- rounded-full animate-pulse bg-red"></span>
+                            @endif
+
                         </div>
                     </div>
                 </div>

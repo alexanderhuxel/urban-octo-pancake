@@ -46,6 +46,7 @@ let webpackConfig = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
+
   module: {
     rules: [
       {
@@ -136,6 +137,9 @@ let webpackConfig = {
   resolve: {
     modules: [config.paths.assets, "node_modules"],
     enforceExtension: false,
+    fallback: {
+      fs: false,
+    },
   },
   externals: {
     jquery: "jQuery",

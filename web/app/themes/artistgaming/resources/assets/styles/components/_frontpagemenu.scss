@@ -1,20 +1,18 @@
 .menu-frontpagemenu-container {
-  @apply w-full h-full;
+  @apply w-full h-full -translate-x-full transition-all duration-300 absolute inset-0 bg-black-200 z-20;
 
   #menu-frontpagemenu {
     @apply list-none  pl-0 mb-0 ml-10 pt-20 md:ml-20 flex flex-col;
   }
 
   .menu-item {
-    @apply font-roadrage md:text-h1 text-h2  pl-0 mb-0;
+    @apply font-roadrage md:text-h1 text-h4  pl-0 mb-0;
 
     a {
       @apply text-white-100;
     }
   }
-}
 
-#fullscreenMenu {
   &.active {
     @apply translate-x-0;
   }

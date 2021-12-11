@@ -127,7 +127,6 @@
 
     <div class="mb-7 shadow-button" id="twitch-embed">
 
-        {{-- underscoor doesnt work without work --}}
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                     new Twitch.Embed("twitch-embed", {

@@ -2,7 +2,7 @@
     <header class="w-full  items-center flex justify-between ">
 
         <a href="{{ get_home_url() }}">
-            <img class="w-5 h-5" src="@asset('images/logo_plain.png')" alt="Logo der Webseite">
+            <img class="w-5 h-5 z-20 absolute" src="@asset('images/logo_plain.png')" alt="Logo der Webseite">
         </a>
 
         <button id="menu-button" class="flex flex-col  z-20 items-center justify-around w-4 h-4 ">

@@ -3,6 +3,7 @@
     @include('partials.head')
 
     <body id="body" class="flex relative flex-col overflow-x-hidden justify-center items-center bg-black-100">
+        {{ wp_nav_menu(array('menu' => 'frontpageMenu')) }}
         <div class="overflow-x-hidden md:overflow-x-visible relative">
             <div class="barba-animation"></div>
             <div id="barba-wrapper" data-barba="wrapper">
@@ -33,10 +34,6 @@
                 </div>
             </div>
             @php wp_footer() @endphp
-            <div id="fullscreenMenu"
-                class="w-screen h-screen  bg-black-200 z-10 transition-all ease-in-out duration-500 transform translate-x-full  absolute  inset-0">
-                {{ wp_nav_menu(array('menu' => 'frontpageMenu')) }}
-            </div>
         </div>
 
     </body>
