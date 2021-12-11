@@ -24,7 +24,7 @@ jobs:
         with:
           server: ftp.alexhuxel.de
           # server-dir // declare de directiory where will be uploaded
-          server-dir: ./
+          server-dir: ./artistgaming/
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
           local-dir: ./
