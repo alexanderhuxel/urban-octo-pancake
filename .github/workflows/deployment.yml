@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-name: 🚀 Deployment 🚀
+name: 🚀 Deployment 🚀 
 jobs:
   web-deploy:
     name: 🎉 FTP-Deploy-Action
