@@ -50,7 +50,7 @@
     </div>
 
     @if (have_rows('streamerGameSlots'))
-    <div class="flex flex-col mb-7">
+    <div class="flex md:min-w-custom flex-col mb-7">
         <h2 class="text-white-200 font-deathrattle text-h2 text-center">
             Spiele
         </h2>
@@ -82,7 +82,8 @@
     </div>
     @endif
 
-    <div class="flex flex-col mb-7">
+    @if (have_rows('streamerDatesSlots'))
+    <div class="flex container flex-col mb-7">
         <h2 class="text-h2 text-white-200 mb-7 text-center font-deathrattle">
             Stream Zeiten
         </h2>
@@ -118,6 +119,7 @@
 
         </div>
     </div>
+    @endif
 
     <div class="flex flex-col">
         <h2 class="text-h2 font-deathrattle text-white-200 mb-7 text-center">
@@ -133,7 +135,7 @@
                       width: "100%",
                       height: 600,
                       channel: $('#streamerName').val(),
-                      parent: ["alexhuxel.de","artistgaming.alexhuxel.de",],
+                      parent: ["artistgaming.de","local.artistgaming.de",],
                     });
                   });
         </script>
