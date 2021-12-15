@@ -67,7 +67,7 @@ add_action('init', function () {
             ),
             'public' => true,
             'publicly_queryable' => true,
-            'exclude_from_search' => true,
+            'exclude_from_search' => false,
             'show_in_nav_menus' => false,
             'hierarchical' => false,
             'has_archive' => true,
