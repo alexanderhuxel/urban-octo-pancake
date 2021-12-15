@@ -15,6 +15,8 @@
   <link rel="mask-icon" href="@asset('images/favicons/safari-pinned-tab.svg')" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#ff0000">
   <meta name="theme-color" content="#ffffff">
+  <meta name="keywords"
+    content="artistgaming.de, artistgaming, Artistgaming.de, Artistgaming, EnergyX89, energyx89, energyx_89, Serasem, serasem, Sv3ndo , sv3ndo, Gio" />
   <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <style>
     html {
