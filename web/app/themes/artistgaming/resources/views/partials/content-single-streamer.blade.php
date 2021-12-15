@@ -22,7 +22,6 @@
             <h2 class="text-white-200 font-deathrattle mb-2.5 text-h2">
                 {{get_the_title()}}
             </h2>
-            <input id="streamerName" class="hidden" value="{{ strtolower($streamerStreamName) }}">
             <span>
                 @if ($streamerAge)
                 <p class="text-white-200 font-quicksand text-body">
@@ -121,25 +120,21 @@
     </div>
     @endif
 
-    <div class="flex flex-col">
-        <h2 class="text-h2 font-deathrattle text-white-200 mb-7 text-center">
-            stream
-        </h2>
-    </div>
+    @if ($streamerStreamName)
+    <div id="#twitch-embed">
+        <div class="flex flex-col">
+            <h2 class="text-h2 font-deathrattle text-white-200 mb-7 text-center">
+                stream
+            </h2>
+        </div>
 
-    <div class="mb-7 shadow-button" id="twitch-embed">
-
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", () => {
-                    new Twitch.Embed("twitch-embed", {
-                      width: "100%",
-                      height: 600,
-                      channel: $('#streamerName').val(),
-                      parent: ["artistgaming.de","local.artistgaming.de",],
-                    });
-                  });
-        </script>
+        <div class="mb-7 shadow-button" id="twitch-embed">
+            <iframe src="https://player.twitch.tv/?channel={{ $streamerStreamName }}&parent=https://artistgaming.de"
+                height="600px" width="100%" allowfullscreen="true">
+            </iframe>
+        </div>
     </div>
+    @endif
 </div>
 
 
