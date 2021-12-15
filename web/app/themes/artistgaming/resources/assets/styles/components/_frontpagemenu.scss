@@ -9,7 +9,7 @@
     @apply font-roadrage md:text-h1 text-h4  pl-0 mb-0;
 
     a {
-      @apply text-white-100;
+      @apply text-white-100 hover:text-purple-300 transition-all;
     }
   }
 
