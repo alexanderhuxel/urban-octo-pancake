@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
   visibility: visible;
   opacity: 1;
+
   &.noscroll {
     @apply overflow-hidden;
   }
