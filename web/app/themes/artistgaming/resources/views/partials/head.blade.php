@@ -17,6 +17,12 @@
   <meta name="theme-color" content="#ffffff">
   <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <style>
+    html {
+      visibility: hidden;
+      opacity: 0;
+    }
+  </style>
+  <style>
     @font-face {
       font-family: roadrage;
       src: url("@asset('../resources/assets/fonts/Road_Rage.otf')");
