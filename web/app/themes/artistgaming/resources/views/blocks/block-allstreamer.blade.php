@@ -25,7 +25,7 @@ $streamer = new WP_Query(array('post_type' => 'Streamer'));
 @section('block')
 <div data-{{ $block['id'] }} class="{{ $block['classes'] }} block">
     @if ($streamer->have_posts())
-    <div class="flex justify-center mt-5">
+    <div class="flex justify-center mt-10">
         <div class="flex justify-center items-start flex-row flex-wrap gap-4">
 
             @while ($streamer->have_posts())
