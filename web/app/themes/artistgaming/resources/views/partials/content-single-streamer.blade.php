@@ -129,7 +129,7 @@
         </div>
 
         <div class="mb-7 shadow-button" id="twitch-embed">
-            <iframe src="https://player.twitch.tv/?channel={{ $streamerStreamName }}&parent=https://artistgaming.de"
+            <iframe src="https://player.twitch.tv/?channel={{ $streamerStreamName }}&parent=artistgaming.de"
                 height="600px" width="100%" allowfullscreen="true">
             </iframe>
         </div>
