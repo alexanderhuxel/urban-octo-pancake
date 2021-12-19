@@ -70,7 +70,7 @@ add_action('init', function () {
             'exclude_from_search' => false,
             'show_in_nav_menus' => false,
             'hierarchical' => false,
-            'has_archive' => true,
+            'has_archive' => false,
             'supports' => array(
                 'title',
                 'page-attributes',
