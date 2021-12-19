@@ -24,7 +24,7 @@ export default {
         menuState = true;
       }
     });
-
+    // menu
     $("#menu-frontpagemenu").on("click", "li", function () {
       $(".menu-frontpagemenu-container ").removeClass("active");
       $("#html").removeClass("noscroll");
