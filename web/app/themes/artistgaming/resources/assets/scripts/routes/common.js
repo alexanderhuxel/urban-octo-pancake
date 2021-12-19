@@ -26,10 +26,8 @@ export default {
     });
 
     $("#menu-frontpagemenu").on("click", "li", function () {
-      setTimeout(() => {
-        $(".menu-frontpagemenu-container ").removeClass("active");
-        $("#html").removeClass("noscroll");
-      }, 1000);
+      $(".menu-frontpagemenu-container ").removeClass("active");
+      $("#html").removeClass("noscroll");
     });
   },
   finalize() {
