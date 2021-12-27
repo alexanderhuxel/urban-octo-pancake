@@ -11,7 +11,6 @@
   SupportsMode: true
   SupportsMultiple: true
 --}}
-// TODO: Swipper ?
 
 @php
 $tournaments = new WP_Query(array('post_type' => 'Tournaments'));

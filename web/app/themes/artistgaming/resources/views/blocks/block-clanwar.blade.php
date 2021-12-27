@@ -20,7 +20,7 @@ $clanwar = new WP_Query(array('post_type'=>'Clanwars'));
 
 @if ($clanwar->have_posts())
 <div class="mb-10">
-    <div class="flex flex-col items-center w-">
+    <div class="flex flex-col items-center">
 
         @while ($clanwar->have_posts())
         @php
